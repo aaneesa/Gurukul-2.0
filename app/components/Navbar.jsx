@@ -10,7 +10,7 @@ const Navbar = () => {
         </h1>
       </Link>
 
-      <div className="flex gap-5 mt-4 mr-8 text-xl ">
+      <div className="flex items-center gap-5 mt-4 mr-8 text-xl ">
         <Link
           href="/"
           className="relative after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-in-out hover:after:w-full"
