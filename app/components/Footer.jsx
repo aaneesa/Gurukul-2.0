@@ -96,28 +96,10 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="hover:text-[#1877F3] text-xl"
-              >
-                <FaFacebookF />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="hover:text-[#0A66C2] text-xl"
               >
                 <FaLinkedinIn />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="hover:text-[#FF0000] text-xl"
-              >
-                <FaYoutube />
               </a>
               <a
                 href="#"
