@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,80 +16,83 @@ const Navbar = () => {
         </h1>
       </Link>
 
-      {/* Tablet + Laptop Menu (always visible from md and up) */}
+      {/* Tablet + Laptop Menu */}
       <div className="hidden md:flex items-center gap-5 mt-4 mr-8 text-xl">
-        <Link
-          href="/"
-          className="relative after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-in-out hover:after:w-full"
-        >
-          Home
-        </Link>
-
-        <Link
-          href="/practice"
-          className="relative after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-in-out hover:after:w-full"
-        >
-          Practice
-        </Link>
-
-        <Link
-          href="/about"
-          className="relative after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-in-out hover:after:w-full"
-        >
-          About
-        </Link>
-
-        <Link
-          href="/contact"
-          className="relative after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-in-out hover:after:w-full"
-        >
-          Contact
-        </Link>
-
+        <Link href="/" className="nav-link">Home</Link>
+        <Link href="/practice" className="nav-link">Practice</Link>
+        <Link href="/about" className="nav-link">About</Link>
+        <Link href="/contact" className="nav-link">Contact</Link>
         <Link href="/auth">
-          <button
-            className="bg-white/80 px-3 py-1 text-black rounded-md cursor-pointer shadow-md 
-                   transition-colors duration-300 ease-in-out 
-                   hover:bg-black hover:text-white"
-          >
-            Sign up
-          </button>
+          <button className="btn-signup">Sign up</button>
         </Link>
       </div>
 
-      {/* Mobile Hamburger (only < md) */}
+      {/* Mobile Hamburger */}
       <div className="md:hidden mr-6 mt-4">
-        <button onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
+        <button onClick={() => setIsOpen(true)}>
+          <Menu size={32} />
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="absolute top-20 right-6 bg-black/90 rounded-lg shadow-lg flex flex-col items-start p-6 gap-4 text-lg md:hidden z-50 w-[70%]">
-          <Link href="/" onClick={() => setIsOpen(false)}>
-            Home
-          </Link>
-          <Link href="/practice" onClick={() => setIsOpen(false)}>
-            Practice
-          </Link>
-          <Link href="/about" onClick={() => setIsOpen(false)}>
-            About
-          </Link>
-          <Link href="/contact" onClick={() => setIsOpen(false)}>
-            Contact
-          </Link>
-          <Link href="/auth" onClick={() => setIsOpen(false)}>
+      {/* Mobile Menu with slide-in animation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 80, damping: 20 }}
+            className="fixed top-0 right-0 h-full w-[70%] bg-black/95 shadow-lg flex flex-col p-6 gap-6 text-lg md:hidden z-50"
+          >
+            {/* Cross Button inside drawer */}
             <button
-              className="bg-white/80 px-3 py-1 text-black rounded-md cursor-pointer shadow-md 
-                     transition-colors duration-300 ease-in-out 
-                     hover:bg-black hover:text-white"
+              className="self-end mb-4"
+              onClick={() => setIsOpen(false)}
             >
-              Sign up
+              <X size={32} />
             </button>
-          </Link>
-        </div>
-      )}
+
+            {/* Nav Links */}
+            <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link href="/practice" onClick={() => setIsOpen(false)}>Practice</Link>
+            <Link href="/about" onClick={() => setIsOpen(false)}>About</Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
+            <Link href="/auth" onClick={() => setIsOpen(false)}>
+              <button className="btn-signup">Sign up</button>
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <style jsx>{`
+        .nav-link {
+          position: relative;
+        }
+        .nav-link::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          background: white;
+          transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after {
+          width: 100%;
+        }
+        .btn-signup {
+          background: rgba(255, 255, 255, 0.8);
+          padding: 0.25rem 0.75rem;
+          border-radius: 0.375rem;
+          color: black;
+          font-weight: 500;
+          transition: all 0.3s ease-in-out;
+        }
+        .btn-signup:hover {
+          background: black;
+          color: white;
+        }
+      `}</style>
     </nav>
   );
 };
