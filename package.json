@@ -9,9 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/express": "^1.7.24",
     "@clerk/nextjs": "^6.31.4",
+    "@google/generative-ai": "^0.24.1",
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.541.0",
+    "mongoose": "^8.18.0",
     "next": "15.4.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -24,5 +30,18 @@
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
     "tailwindcss": "^4"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaneesa/Gurukul-2.0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaneesa/Gurukul-2.0/issues"
+  },
+  "homepage": "https://github.com/aaneesa/Gurukul-2.0#readme"
 }
