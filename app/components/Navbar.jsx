@@ -1,13 +1,23 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SignUpButton, UserButton, useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isSignedIn } = useUser();
+  const { isSignedIn, isLoaded } = useUser();
+  const router = useRouter();
+
+  // Handle redirect after authentication
+  useEffect(() => {
+    if (isLoaded && isSignedIn) {
+      // Redirect to practice page after successful authentication
+      router.push("/practice");
+    }
+  }, [isSignedIn, isLoaded, router]);
 
   // Shared Clerk appearance configuration
   const clerkAppearance = {
