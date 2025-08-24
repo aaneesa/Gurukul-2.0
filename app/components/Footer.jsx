@@ -16,7 +16,7 @@ const Footer = () => {
 
           {/* logo and text */}
           <div className="col-span-1 md:mb-0 mb-8">
-            <div className="text-white text-2xl font-bold mb-4 qwitcher-grypen-regular">
+            <div className="text-white text-2xl font-bold mb-4 ">
               Gurukul 2.0
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
@@ -34,7 +34,7 @@ const Footer = () => {
 
           {/* pages links */}
           <div className="col-span-1 md:ml-6 md:mb-0 mb-8">
-            <h4 className="text-lg font-semibold mb-4 qwitcher-grypen-regular">
+            <h4 className="text-lg font-semibold mb-4 ">
               Pages
             </h4>
             <div className="flex flex-wrap text-sm text-gray-400">
@@ -79,7 +79,7 @@ const Footer = () => {
 
           <div className="col-span-1">
             {/* Social Media Section */}
-            <h4 className="text-lg font-semibold mb-3 mt-6 qwitcher-grypen-regular">
+            <h4 className="text-lg font-semibold mb-3 ">
               Social Media
             </h4>
             <div className="flex flex-wrap items-center text-gray-400 gap-4 mb-2">

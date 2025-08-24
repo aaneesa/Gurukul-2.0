@@ -11,8 +11,8 @@ const Navbar = () => {
     <nav className="flex justify-between items-center text-white mt-5 relative">
       {/* Logo */}
       <Link href="/">
-        <h1 className="text-4xl qwitcher-grypen-regular ml-8 mt-4 cursor-pointer">
-          Gurukul 2.0
+        <h1 className="text-4xl poppins-medium ml-8 mt-4 cursor-pointer">
+          Gurukul AI
         </h1>
       </Link>
 
@@ -27,14 +27,12 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Mobile Hamburger */}
       <div className="md:hidden mr-6 mt-4">
         <button onClick={() => setIsOpen(true)}>
           <Menu size={32} />
         </button>
       </div>
 
-      {/* Mobile Menu with slide-in animation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -45,7 +43,6 @@ const Navbar = () => {
             transition={{ type: "spring", stiffness: 80, damping: 20 }}
             className="fixed top-0 right-0 h-full w-[70%] bg-black/95 shadow-lg flex flex-col p-6 gap-6 text-lg md:hidden z-50"
           >
-            {/* Cross Button inside drawer */}
             <button
               className="self-end mb-4"
               onClick={() => setIsOpen(false)}
@@ -53,7 +50,6 @@ const Navbar = () => {
               <X size={32} />
             </button>
 
-            {/* Nav Links */}
             <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
             <Link href="/practice" onClick={() => setIsOpen(false)}>Practice</Link>
             <Link href="/about" onClick={() => setIsOpen(false)}>About</Link>
