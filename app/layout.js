@@ -1,5 +1,7 @@
+import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import "./globals.css";
-
 
 export const metadata = {
   title: "Gurukul 2.0",
@@ -10,7 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <ClerkProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ClerkProvider>
       </body>
     </html>
   );
