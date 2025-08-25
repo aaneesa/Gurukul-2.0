@@ -1,38 +1,23 @@
 "use client";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SignUpButton, UserButton, useUser } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isSignedIn, isLoaded } = useUser();
-  const router = useRouter();
+  const { isSignedIn } = useUser();
 
-  // Handle redirect after authentication
-  useEffect(() => {
-    if (isLoaded && isSignedIn) {
-      // Redirect to practice page after successful authentication
-      router.push("/practice");
-    }
-  }, [isSignedIn, isLoaded, router]);
-
-  // Shared Clerk appearance configuration
   const clerkAppearance = {
     elements: {
       rootBox: "font-sans",
       card: "bg-gradient-to-br from-black via-gray-900 to-black border border-white/20 shadow-2xl backdrop-blur-sm",
       headerTitle: "text-white text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent",
       headerSubtitle: "text-gray-300",
-  
-      // 🔵 Primary buttons (covers Continue, Submit, etc.)
       formButtonPrimary:
         "bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:from-blue-600 hover:to-blue-800 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg",
       formButtonPrimaryText: "text-white font-semibold",
-  
-      // Secondary buttons
       formButtonSecondary:
         "bg-gradient-to-r from-transparent via-white/10 to-transparent text-white border border-white/30 hover:from-white/20 hover:to-white/10 font-semibold py-3 px-6 rounded-lg transition-all duration-300",
   
@@ -80,7 +65,7 @@ const Navbar = () => {
       formButtonDisabled: "opacity-50 cursor-not-allowed",
     },
     variables: {
-      colorPrimary: "#3b82f6", // Tailwind blue-500
+      colorPrimary: "#3b82f6", 
       colorBackground: "#000000",
       colorText: "#ffffff",
       colorTextSecondary: "#9ca3af",
@@ -107,10 +92,10 @@ const Navbar = () => {
 
       {/* Tablet + Laptop Menu */}
       <div className="hidden md:flex items-center gap-5 mt-4 mr-8 text-xl">
-        <Link href="/" className="nav-link">Home</Link>
-        <Link href="/practice" className="nav-link">Practice</Link>
-        <Link href="/about" className="nav-link">About</Link>
-        <Link href="/contact" className="nav-link">Contact</Link>
+        <Link href="/">Home</Link>
+        <Link href="/practice" >Practice</Link>
+        <Link href="/about">About</Link>
+        <Link href="/contact">Contact</Link>
         
         {/* Clerk Authentication */}
         {isSignedIn ? (
@@ -125,6 +110,8 @@ const Navbar = () => {
           <SignUpButton 
             mode="modal"
             appearance={clerkAppearance}
+            afterSignUpUrl="/practice"
+            afterSignInUrl="/practice"
           >
             <button className="btn-signup">Sign Up</button>
           </SignUpButton>

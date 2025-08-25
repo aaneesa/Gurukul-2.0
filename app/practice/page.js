@@ -6,6 +6,7 @@ import { FaBrain, FaCube } from 'react-icons/fa';
 import { LayoutDashboard, Mic } from 'lucide-react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import ProtectedRoute from '../components/ProtectedRoute';
 const features = [
 
   {
@@ -50,7 +51,7 @@ const page = () => {
     }
   }, []);
   return (
-    <>
+    <ProtectedRoute>
       <Navbar/>
         <div className="min-h-screen mt-10 px-8">
       <DashboardSection userName="Aniket" />
@@ -77,7 +78,7 @@ const page = () => {
       </div>
       <Footer/>
     </div>
-    </>
+    </ProtectedRoute>
   )
 }
 

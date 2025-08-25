@@ -13,9 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ClerkProvider>
-          <Navbar />
           {children}
-          <Footer />
         </ClerkProvider>
       </body>
     </html>
