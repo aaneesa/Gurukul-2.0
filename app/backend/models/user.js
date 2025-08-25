@@ -4,11 +4,10 @@ const userProgressSchema = new mongoose.Schema({
   chapterId: { type: mongoose.Schema.Types.ObjectId, ref: 'Chapter' },
   completed: Boolean,
   progress: Number,
-  mcqScore: Number,
-  timeSpent: Number,
   lastAccessed: Date,
   strengths: [String],
-  weaknesses: [String]
+  weaknesses: [String],
+  mcqGenerated: Number,
 });
 
 const userSchema = new mongoose.Schema({
@@ -34,8 +33,6 @@ const userSchema = new mongoose.Schema({
   preferredLanguage: String,
   difficultyPreference: String,
   totalChaptersCompleted: Number,
-  totalMCQsAttempted: Number,
-  totalMCQsCorrect: Number,
   createdAt: Date,
   updatedAt: Date
 });
