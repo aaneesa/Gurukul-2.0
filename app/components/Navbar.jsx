@@ -86,7 +86,7 @@ const Navbar = () => {
       {/* Logo */}
       <Link href="/">
         <h1 className="text-4xl poppins-medium ml-8 mt-4 cursor-pointer">
-          Gurukul AI
+          Gurukul 2.0
         </h1>
       </Link>
 

@@ -42,7 +42,7 @@ export default function Home() {
           className="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 items-center lg:items-start text-center lg:text-left mt-6 md:mt-10 lg:mt-0"
         >
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl whitespace-nowrap poppins-medium lg:mr-100">
-            Gurukul AI
+            Gurukul 2.0
           </h1>
           <p className="text-white poppins-medium text-base sm:text-lg md:text-2xl lg:text-3xl px-3 md:px-0">
             Empowering students to master their exams,
