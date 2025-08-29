@@ -110,8 +110,6 @@ const Navbar = () => {
           <SignUpButton 
             mode="modal"
             appearance={clerkAppearance}
-            afterSignUpUrl="/practice"
-            afterSignInUrl="/practice"
           >
             <button className="btn-signup">Sign Up</button>
           </SignUpButton>
