@@ -20,35 +20,23 @@ const Navbar = () => {
       formButtonPrimaryText: "text-white font-semibold",
       formButtonSecondary:
         "bg-gradient-to-r from-transparent via-white/10 to-transparent text-white border border-white/30 hover:from-white/20 hover:to-white/10 font-semibold py-3 px-6 rounded-lg transition-all duration-300",
-  
-      // Fields
       formFieldInput:
         "bg-gradient-to-r from-white/5 to-white/10 border border-white/20 text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-gradient-to-r focus:from-white/10 focus:to-white/20",
       formFieldLabel: "text-white font-medium",
       formFieldLabelRow: "mb-2",
       formFieldInputShowPasswordButton: "text-white hover:text-gray-300",
       formFieldInputShowPasswordButtonIcon: "w-5 h-5",
-  
-      // Divider
       dividerLine: "bg-gradient-to-r from-transparent via-white/20 to-transparent",
       dividerText: "text-gray-300",
-  
-      // Footer links
       footerActionLink: "text-white hover:text-gray-300 underline",
-  
-      // Social buttons
       socialButtonsBlockButton:
         "bg-gradient-to-r from-white/20 to-white/10 border border-white/30 text-white hover:from-white/30 hover:to-white/20 rounded-lg px-4 py-3 transition-all duration-300 flex items-center justify-center gap-3 font-medium",
       socialButtonsBlockButtonText: "font-medium text-white",
       socialButtonsBlockButtonArrow: "text-white",
       socialButtonsBlockButtonIcon: "w-5 h-5",
-  
-      // Alerts
       alert: "bg-gradient-to-r from-red-500/20 to-red-600/20 border border-red-500/30 text-red-300 rounded-lg p-4",
       alertText: "text-red-300",
       alertIcon: "text-red-400",
-  
-      // Form structure
       formFieldRow: "mb-4",
       formFieldActionRow: "mt-2",
       footer: "mt-6 pt-4 border-t border-white/10",
@@ -65,7 +53,7 @@ const Navbar = () => {
       formButtonDisabled: "opacity-50 cursor-not-allowed",
     },
     variables: {
-      colorPrimary: "#3b82f6", 
+      colorPrimary: "#3b82f6",
       colorBackground: "#000000",
       colorText: "#ffffff",
       colorTextSecondary: "#9ca3af",
@@ -79,7 +67,6 @@ const Navbar = () => {
       fontSize: "1rem",
     },
   };
-  
 
   return (
     <nav className="flex justify-between items-center text-white mt-5 relative">
@@ -93,24 +80,21 @@ const Navbar = () => {
       {/* Tablet + Laptop Menu */}
       <div className="hidden md:flex items-center gap-5 mt-4 mr-8 text-xl">
         <Link href="/">Home</Link>
-        <Link href="/practice" >Practice</Link>
+        <Link href="/practice">Practice</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
-        
+
         {/* Clerk Authentication */}
         {isSignedIn ? (
-          <UserButton 
+          <UserButton
             appearance={{
               elements: {
-                avatarBox: "w-10 h-10"
-              }
+                avatarBox: "w-10 h-10",
+              },
             }}
           />
         ) : (
-          <SignUpButton 
-            mode="modal"
-            appearance={clerkAppearance}
-          >
+          <SignUpButton mode="modal" appearance={clerkAppearance}>
             <button className="btn-signup">Sign Up</button>
           </SignUpButton>
         )}
@@ -132,34 +116,36 @@ const Navbar = () => {
             transition={{ type: "spring", stiffness: 80, damping: 20 }}
             className="fixed top-0 right-0 h-full w-[70%] bg-black/95 shadow-lg flex flex-col p-6 gap-6 text-lg md:hidden z-50"
           >
-            <button
-              className="self-end mb-4"
-              onClick={() => setIsOpen(false)}
-            >
+            <button className="self-end mb-4" onClick={() => setIsOpen(false)}>
               <X size={32} />
             </button>
 
-            <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
-            <Link href="/practice" onClick={() => setIsOpen(false)}>Practice</Link>
-            <Link href="/about" onClick={() => setIsOpen(false)}>About</Link>
-            <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
-            
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
+            <Link href="/practice" onClick={() => setIsOpen(false)}>
+              Practice
+            </Link>
+            <Link href="/about" onClick={() => setIsOpen(false)}>
+              About
+            </Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)}>
+              Contact
+            </Link>
+
             {/* Clerk Authentication for Mobile */}
             {isSignedIn ? (
               <div className="flex justify-center">
-                <UserButton 
+                <UserButton
                   appearance={{
                     elements: {
-                      avatarBox: "w-10 h-10"
-                    }
+                      avatarBox: "w-10 h-10",
+                    },
                   }}
                 />
               </div>
             ) : (
-              <SignUpButton 
-                mode="modal"
-                appearance={clerkAppearance}
-              >
+              <SignUpButton mode="modal" appearance={clerkAppearance}>
                 <button className="btn-signup w-full">Sign Up</button>
               </SignUpButton>
             )}
