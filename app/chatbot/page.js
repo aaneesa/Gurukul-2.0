@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Mic, Send, ArrowLeft } from "lucide-react";
+import { Mic, Send, ArrowLeft, BookOpen } from "lucide-react";
 
 const Chatbot = () => {
   const router = useRouter();
@@ -33,6 +33,9 @@ const Chatbot = () => {
           ) : (
             <Send size={20} className="text-white ml-3 cursor-pointer" />
           )}
+          <button className="ml-3 cursor-pointer">
+            <BookOpen size={20} className="text-white" />
+          </button>
         </div>
       </div>
     </div>

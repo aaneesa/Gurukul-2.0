@@ -20,7 +20,7 @@ const SubjectsSection = () => {
       chapters: 14,
       progress: 40,
       chaptersList: [
-        "अध्याय 1: स्वतंत्रता संग्राम"
+        "अध्याय 1: यूरोप में राष्ट्रवाद का उदय"
       ],
       icon: <BookOpen size={28} className="text-white/80" />,
     },
