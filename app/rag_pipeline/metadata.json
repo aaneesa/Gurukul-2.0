@@ -1,0 +1,37 @@
+[
+  {
+    "file": "history_ch1_nationalismInEurope.txt",
+    "subject": "History",
+    "class": 10,
+    "language": "English",
+    "chapter": "Chapter 1: Nationalism in Europe"
+  },
+  {
+    "file": "history_ch2_NationalismIndia.txt",
+    "subject": "History",
+    "class": 10,
+    "language": "English",
+    "chapter": "Chapter 2: Nationalism in India"
+  },
+  {
+    "file": "history_ch3_globalWorld.txt",
+    "subject": "History",
+    "class": 10,
+    "language": "English",
+    "chapter": "Chapter 3: The Making of a Global World"
+  },
+  {
+    "file": "history_ch4_industralisation.txt",
+    "subject": "History",
+    "class": 10,
+    "language": "English",
+    "chapter": "Chapter 4: The Age of Industrialisation"
+  },
+  {
+    "file": "history_ch5_modernWorld.txt",
+    "subject": "History",
+    "class": 10,
+    "language": "English",
+    "chapter": "Chapter 5: Print Culture and the Modern World"
+  }
+]
