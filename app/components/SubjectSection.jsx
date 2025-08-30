@@ -15,67 +15,14 @@ const SubjectsSection = () => {
 
   const subjects = [
     {
-      name: "Mathematics",
-      description: "गणित (भाग 1)",
-      chapters: 12,
-      progress: 75,
-      chaptersList: [
-        "अध्याय 1: बीजगणित",
-        "अध्याय 2: कलन",
-        "अध्याय 3: त्रिकोणमिति",
-        "अध्याय 4: ज्यामिति",
-      ],
-      icon: <Calculator size={28} className="text-white/80" />,
-    },
-    {
-      name: "Physics",
-      description: "भौतिक विज्ञान (भाग 1)",
-      chapters: 15,
-      progress: 50,
-      chaptersList: [
-        "अध्याय 1: यांत्रिकी",
-        "अध्याय 2: ऊष्मा गतिकी",
-        "अध्याय 3: प्रकाशिकी",
-        "अध्याय 4: विद्युत",
-      ],
-      icon: <Atom size={28} className="text-white/80" />,
-    },
-    {
-      name: "Chemistry",
-      description: "रसायन विज्ञान (भाग 1)",
-      chapters: 10,
-      progress: 67,
-      chaptersList: [
-        "अध्याय 1: कार्बनिक रसायन",
-        "अध्याय 2: भौतिक रसायन",
-        "अध्याय 3: अकार्बनिक रसायन",
-      ],
-      icon: <FlaskConical size={28} className="text-white/80" />,
-    },
-    {
       name: "History",
       description: "आधुनिक भारत का इतिहास",
       chapters: 14,
       progress: 40,
       chaptersList: [
-        "अध्याय 1: स्वतंत्रता संग्राम",
-        "अध्याय 2: समाज सुधार आंदोलन",
-        "अध्याय 3: आज़ादी के बाद",
+        "अध्याय 1: स्वतंत्रता संग्राम"
       ],
       icon: <BookOpen size={28} className="text-white/80" />,
-    },
-    {
-      name: "Computer Science",
-      description: "कंप्यूटर विज्ञान (भाग 1)",
-      chapters: 20,
-      progress: 82,
-      chaptersList: [
-        "अध्याय 1: डेटा संरचना",
-        "अध्याय 2: एल्गोरिद्म",
-        "अध्याय 3: नेटवर्किंग",
-        "अध्याय 4: डाटाबेस",
-      ],
-      icon: <Calculator size={28} className="text-white/80" />,
     },
   ];
 
