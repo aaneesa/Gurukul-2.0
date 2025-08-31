@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gurukul 2.0
 
-## Getting Started
+> **Reimagining regional education** — Personalized, gamified learning based on state-board chapters with AI-powered MCQs, flashcards, audio summaries, and motivational nudges.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Overview
+Gurukul 2.0 is an AI-powered learning platform built to make **state-board education** interactive, accessible, and fun — especially in regional languages. It focuses on **personalized learning** with chapter-wise MCQs, flashcards, summaries, and adaptive revision suggestions.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This MVP starts with **5 chapters** from a state board book in a regional language and builds features around **practice, revision, and motivation**.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Features
 
-## Learn More
+- 📖 **Chapter-wise Learning**  
+  - Users select a chapter from available state-board content (PDF or pre-loaded text).  
+  - All subtopics are listed before starting.  
 
-To learn more about Next.js, take a look at the following resources:
+- 🧩 **Dynamic MCQs**  
+  - Generate MCQs per subtopic.  
+  - Generate final practice MCQs for the entire book (without subtopic hints).  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🧠 **Adaptive Revision**  
+  - Learns user strengths & weaknesses.  
+  - Suggests what to revise next.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 🃏 **Auto Flashcards**  
+  - Converts key concepts into flashcards for quick revision.  
 
-## Deploy on Vercel
+- 🎧 **Audio Summaries**  
+  - Chapter summaries available as repeatable audio.  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 💬 **Local Motivational Nudges**  
+  - Encouragement in regional idioms and sayings.  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 🔥 **Gamification**  
+  - Daily streaks + reward system to build consistency.  
+
+- 🗣 **Speech-to-Text & Text-to-Speech**  
+  - Voice-based doubt asking via LLM.  
+  - Spoken explanations for better accessibility.  
+
+---
+
+## 🛠 Tech Stack (MVP-Friendly)
+
+| Category           | Suggested Technology             |
+|--------------------|-----------------------------------|
+| Frontend           | React / Next.js + Tailwind CSS    |
+| Backend            | Node.js / Express.js              |
+| Database           | MongoDB (NoSQL, flexible for user data) |
+| AI / LLM           | Gemini API (Google) or OpenAI API |
+| Speech & Audio     | Google Text-to-Speech / Whisper / Web Speech API |
+| Authentication     | Clerk / Firebase Auth / Auth0     |
+| File Handling (PDF)| PDF.js or PyMuPDF (backend processing) |
+| Deployment         | Vercel / Render / Netlify         |
+
+---
+
+## 📦 Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/gurukul-2.0.git
+   cd gurukul-2.0
